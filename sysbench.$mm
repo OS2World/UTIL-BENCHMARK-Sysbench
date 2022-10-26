@@ -1,0 +1,159 @@
+:TARGET.SUFFIXES
+:TARGET.SUFFIXES
+:DEPENDENCY..cpp .obj .rc .res 
+:TARGET.all
+:DEPENDENCY.
+\sysbench\sysbench.exe
+:RULE..cpp.obj
+:ACTION.Compile::C++ Compiler
+:COMMAND.
+icc.exe -DOS2TMR /Tl10 /Ss /O /Gm /C %s
+:RULE.{F:\sysbench\src}.cpp.obj
+:ACTION.Compile::C++ Compiler
+:COMMAND.
+icc.exe -DOS2TMR /Tl10 /Ss /O /Gm /C %s
+:RULE..rc.res
+:ACTION.Compile::Resource Compiler
+:COMMAND.
+rc.exe -r %s .\%|fF.RES
+:RULE.{F:\sysbench\src}.rc.res
+:ACTION.Compile::Resource Compiler
+:COMMAND.
+rc.exe -r %s .\%|fF.RES
+:TARGET..\sysbench.map \sysbench\sysbench.exe
+:DEPENDENCY.
+F:\sysbench\src\pmcpu3a.obj
+.\pmrmqry.obj
+.\dhry_1.obj
+.\dhry_2.obj
+.\diskacc2.obj
+.\pmbbench.obj
+.\pmbdskfe.obj
+.\pmbdskio.obj
+.\pmbfilio.obj
+.\pmbgbios.obj
+.\pmbmemsp.obj
+.\pmbsaver.obj
+.\pmb_dive.obj
+.\pmb_gfx.obj
+.\pmb_main.obj
+.\pmcpu3b.obj
+.\pmb.res
+{$(LIB)}dive.lib
+:ACTION.Link::Linker
+:COMMAND.
+icc.exe @<<
+ /B" /exepack:2 /st:65536 /pmtype:pm"
+ /Fe\sysbench\sysbench.exe 
+ /Fm"sysbench.map" 
+ dive.lib 
+ F:\sysbench\src\pmcpu3a.obj
+ .\pmrmqry.obj
+ .\dhry_1.obj
+ .\dhry_2.obj
+ .\diskacc2.obj
+ .\pmbbench.obj
+ .\pmbdskfe.obj
+ .\pmbdskio.obj
+ .\pmbfilio.obj
+ .\pmbgbios.obj
+ .\pmbmemsp.obj
+ .\pmbsaver.obj
+ .\pmb_dive.obj
+ .\pmb_gfx.obj
+ .\pmb_main.obj
+ .\pmcpu3b.obj
+<<
+:ACTION.Bind::Resource Bind
+:COMMAND.
+rc.exe .\pmb.res \sysbench\sysbench.exe
+:TARGET..\pmcpu3b.obj
+:DEPENDENCY.
+F:\sysbench\src\pmcpu3b.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+:TARGET..\pmb_main.obj
+:DEPENDENCY.
+F:\sysbench\src\pmb_main.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmbdatat.h
+{F:\sysbench\src;$(INCLUDE);}diskacc2.h
+{F:\sysbench\src;$(INCLUDE);}pmbbench.h
+{F:\sysbench\src;$(INCLUDE);}pmb.h
+:TARGET..\pmb_gfx.obj
+:DEPENDENCY.
+F:\sysbench\src\pmb_gfx.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmb.h
+:TARGET..\pmb_dive.obj
+:DEPENDENCY.
+F:\sysbench\src\pmb_dive.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmb.h
+{F:\sysbench\src;$(INCLUDE);}mmioos2.h
+{F:\sysbench\src;$(INCLUDE);}dive.h
+{F:\sysbench\src;$(INCLUDE);}fourcc.h
+:TARGET..\pmbsaver.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbsaver.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmbdatat.h
+{F:\sysbench\src;$(INCLUDE);}pmbbench.h
+{F:\sysbench\src;$(INCLUDE);}pmb.h
+:TARGET..\pmbmemsp.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbmemsp.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+:TARGET..\pmbgbios.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbgbios.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmbbench.h
+{F:\sysbench\src;$(INCLUDE);}pmb.h
+:TARGET..\pmbfilio.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbfilio.cpp
+:TARGET..\pmbdskio.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbdskio.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}diskacc2.h
+:TARGET..\pmbdskfe.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbdskfe.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmbdatat.h
+{F:\sysbench\src;$(INCLUDE);}diskacc2.h
+{F:\sysbench\src;$(INCLUDE);}perfutil.h
+:TARGET..\pmbbench.obj
+:DEPENDENCY.
+F:\sysbench\src\pmbbench.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmbdatat.h
+{F:\sysbench\src;$(INCLUDE);}pmbbench.h
+{F:\sysbench\src;$(INCLUDE);}pmb.h
+:TARGET..\diskacc2.obj
+:DEPENDENCY.
+F:\sysbench\src\diskacc2.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}diskacc2.h
+:TARGET..\dhry_2.obj
+:DEPENDENCY.
+F:\sysbench\src\dhry_2.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}dhry.h
+:TARGET..\dhry_1.obj
+:DEPENDENCY.
+F:\sysbench\src\dhry_1.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}dhry.h
+:TARGET..\pmrmqry.obj
+:DEPENDENCY.
+F:\sysbench\src\pmrmqry.cpp
+{F:\sysbench\src;$(INCLUDE);}types.h
+{F:\sysbench\src;$(INCLUDE);}pmbdatat.h
+:TARGET..\pmb.res
+:DEPENDENCY.
+F:\sysbench\src\pmb.rc
+{F:\sysbench\src;$(INCLUDE)}sysbench.ico
+{F:\sysbench\src;$(INCLUDE)}syslight.ico
+{F:\sysbench\src;$(INCLUDE)}pmb.h

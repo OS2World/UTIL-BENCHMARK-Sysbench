@@ -1,0 +1,290 @@
+
+#include "pmb.h"
+#define INCL_NLS
+#include <os2.h>
+
+STRINGTABLE
+  BEGIN
+    WND_MAIN,   "SysBench "SYSB_VER
+  END
+
+MENU WND_MAIN
+  BEGIN
+  PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    SUBMENU "~File",                             MI_MENU_PROJ
+    BEGIN
+      MENUITEM "E~xpand All",                    MI_PROJ_EXPAND
+      MENUITEM "~Beep after 'All tests'",        MI_PROJ_BEEP
+      MENUITEM SEPARATOR
+      MENUITEM "~Save result",                   MI_PROJ_SAVE
+      MENUITEM "Save result (~HTML)",            MI_PROJ_SAVE_HTML
+      MENUITEM SEPARATOR
+      MENUITEM "~Machine data...",               MI_MACHINE_DATA
+      MENUITEM "~About...",                      MI_PROJ_ABOUT
+      MENUITEM SEPARATOR
+      MENUITEM "~Do all tests",                  MI_PROJ_ALL
+      MENUITEM SEPARATOR
+      MENUITEM "~Quit",                          MI_PROJ_QUIT
+    END
+
+    SUBMENU "~Graphics",                         MI_MENU_GFX
+    BEGIN
+      MENUITEM "~BitBlt S->S copy",              MI_GFX_BITBLIT_SS
+      MENUITEM "BitBlt ~M->S copy",              MI_GFX_BITBLIT_MS
+      MENUITEM "~Filled Rectangle",              MI_GFX_FILLRECT
+      MENUITEM "~Pattern Fill",                  MI_GFX_PATFIL
+      MENUITEM "~Vertical Lines",                MI_GFX_VLINES
+      MENUITEM "~Horizontal Lines",              MI_GFX_HLINES
+      MENUITEM "~Diagonal Lines",                MI_GFX_DLINES
+      MENUITEM "~Text Render",                   MI_GFX_TEXTRENDER
+      MENUITEM SEPARATOR
+      MENUITEM "~All",                           MI_GFX_ALL
+    END
+
+    SUBMENU "~CPU-int",                          MI_MENU_CPUINT
+    BEGIN
+      MENUITEM "~Dhrystone",                     MI_CPUINT_DHRY
+      MENUITEM "~Hanoi",                         MI_CPUINT_HANOI
+      MENUITEM "H~eapsort",                      MI_CPUINT_HEAPS
+      MENUITEM "~Sieve",                         MI_CPUINT_SIEVE
+      MENUITEM SEPARATOR
+      MENUITEM "~All",                           MI_CPUINT_ALL
+    END
+
+    SUBMENU "C~PU-float",                        MI_MENU_CPUFLOAT
+    BEGIN
+      MENUITEM "~Linpack",                       MI_CPUFLOAT_LINPACK
+      MENUITEM "~Flops",                         MI_CPUFLOAT_FLOPS
+      MENUITEM "Fast Fourier ~Transform",        MI_CPUFLOAT_FFT
+      MENUITEM SEPARATOR
+      MENUITEM "~All",                           MI_CPUFLOAT_ALL
+    END
+
+    SUBMENU "~DIVE",                             MI_MENU_DIVE
+    BEGIN
+      MENUITEM "~Video bus bandwidth",           MI_DIVE_VIDEO_BW
+      MENUITEM "~DIVE fun",                      MI_DIVE_ROTATE_SCREEN
+      MENUITEM "~M->S, display 1.00:1",          MI_DIVE_MS_11
+      MENUITEM SEPARATOR
+      MENUITEM "~All",                           MI_DIVE_ALL
+    END
+
+    SUBMENU "Fi~le I/O",                         MI_MENU_FILEIO
+    BEGIN
+      SUBMENU "~Select disk",                    MI_MENU_FILEIO_SELECT
+      BEGIN
+      END
+      MENUITEM "~4Kb  I/O tests",                MI_FILEIO_4KB
+      MENUITEM "~8Kb  I/O tests",                MI_FILEIO_8KB
+      MENUITEM "~16Kb I/O tests",                MI_FILEIO_16KB
+      MENUITEM "~32Kb I/O tests",                MI_FILEIO_32KB
+      MENUITEM "~64Kb I/O tests",                MI_FILEIO_64KB
+      MENUITEM SEPARATOR
+      MENUITEM "~All file I/O tests",            MI_FILEIO_ALL
+    END
+
+    SUBMENU "~Memory",                           MI_MENU_MEM
+    BEGIN
+      MENUITEM "5 kB copy",                      MI_MEM_5
+      MENUITEM "10 kB copy",                     MI_MEM_10
+      MENUITEM "20 kB copy",                     MI_MEM_20
+      MENUITEM "40 kB copy",                     MI_MEM_40
+      MENUITEM "80 kB copy",                     MI_MEM_80
+      MENUITEM "160 kB copy",                    MI_MEM_160
+      MENUITEM "320 kB copy",                    MI_MEM_320
+      MENUITEM "640 kB copy",                    MI_MEM_640
+      MENUITEM "1280 kB copy",                   MI_MEM_1280
+      MENUITEM SEPARATOR
+      MENUITEM "5 kB read",                      MI_MEMR_5
+      MENUITEM "10 kB read",                     MI_MEMR_10
+      MENUITEM "20 kB read",                     MI_MEMR_20
+      MENUITEM "40 kB read",                     MI_MEMR_40
+      MENUITEM "80 kB read",                     MI_MEMR_80
+      MENUITEM "160 kB read",                    MI_MEMR_160
+      MENUITEM "320 kB read",                    MI_MEMR_320
+      MENUITEM "640 kB read",                    MI_MEMR_640
+      MENUITEM "1280 kB read",                   MI_MEMR_1280
+      MENUITEM SEPARATOR
+      MENUITEM "5 kB write",                     MI_MEMW_5
+      MENUITEM "10 kB write",                    MI_MEMW_10
+      MENUITEM "20 kB write",                    MI_MEMW_20
+      MENUITEM "40 kB write",                    MI_MEMW_40
+      MENUITEM "80 kB write",                    MI_MEMW_80
+      MENUITEM "160 kB write",                   MI_MEMW_160
+      MENUITEM "320 kB write",                   MI_MEMW_320
+      MENUITEM "640 kB write",                   MI_MEMW_640
+      MENUITEM "1280 kB write",                  MI_MEMW_1280
+      MENUITEM SEPARATOR
+      MENUITEM "~All",                           MI_MEM_ALL
+    END
+
+    SUBMENU "Disk ~I/O",                         MI_MENU_DISKIO
+    BEGIN
+      SUBMENU "~Select disk",                    MI_MENU_DISKIO_SELECT
+      BEGIN
+      END
+      MENUITEM "A~verage data access time",      MI_DISKIO_AVSEEK
+      MENUITEM "~Drive Cache/Bus transfer",      MI_DISKIO_CBXFER
+      MENUITEM "Average ~transfer rate",         MI_DISKIO_TRANS_SPEED
+      MENUITEM "Disk use ~CPU load %",           MI_DISKIO_CPU_USAGE
+      MENUITEM SEPARATOR
+      MENUITEM "~All tests - Selected disk",     MI_DISKIO_ALL
+      MENUITEM SEPARATOR
+      MENUITEM "A~ll tests - All drives",        MI_DISKIO_ALL_DISKS
+      MENUITEM SEPARATOR
+      MENUITEM "Si~multaneous I/O test",         MI_ALL_DISKS
+    END
+
+    SUBMENU "CD-~ROM I/O",                       MI_MENU_CDIO
+    BEGIN
+      SUBMENU "~Select CD",                      MI_MENU_CDIO_SELECT
+      BEGIN
+      END
+      MENUITEM "A~verage data access time",      MI_CDIO_AVSEEK
+//      MENUITEM "~Inner transfer rate",           MI_CDIO_TRANS_INNER
+//      MENUITEM "~Outer transfer rate",           MI_CDIO_TRANS_OUTER
+      MENUITEM "Average ~transfer rate",         MI_CDIO_TRANS_INNER
+      MENUITEM "CD use ~CPU load %",             MI_CDIO_CPU_USAGE
+      MENUITEM SEPARATOR
+      MENUITEM "~All tests - Selected drive",    MI_CDIO_ALL
+      MENUITEM SEPARATOR
+      MENUITEM "A~ll tests - All drives",        MI_CDIO_ALL_DRIVES
+    END
+
+/*
+    SUBMENU "Reference", MI_MENU_REF
+    BEGIN
+      MENUITEM "Load first reference machine",      MI_REF_1_LOAD
+      MENUITEM "Load second reference machine",     MI_REF_2_LOAD
+      MENUITEM "Info on first reference machine",   MI_REF_1_INFO
+      MENUITEM "Info on second reference machine",  MI_REF_2_INFO
+    END
+*/
+  END
+
+/*----------------------------*/
+/* Product information dialog */
+/*----------------------------*/
+
+ICON  IDD_SHOWLITE syslight.ico
+ICON  IDD_SHOWWAIT4 sysbench.ico
+ICON  WND_MAIN      sysbench.ico
+DEFAULTICON sysbench.ico
+
+DLGTEMPLATE IDD_SHOWWAIT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Sysbench", IDD_SHOWWAIT3, 120, 200, 190, 27, WS_VISIBLE,
+            FCF_DLGBORDER
+    BEGIN
+        ICON            IDD_SHOWWAIT4, IDD_SHOWICON, 12, 9, 20, 16
+        ICON            IDD_SHOWLITE, IDD_SHOWICON2, 152, 9, 20, 16
+        LTEXT           "Sysbench", IDD_SHOWWAIT1, 83, 11, 65, 8
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00C80000L
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+                 /*       PRESPARAMS PP_BACKGROUNDCOLOR, 0x00000000L    */
+        LTEXT           "Please wait, gathering information about your system......",
+                        IDD_SHOWWAIT2, 5, 3, 175, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", IDD_SHOWWAIT5, 0, 0, 0, 0
+    END
+END
+
+
+DLGTEMPLATE IDD_MACHINE_DATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Define machine configuration...", IDD_MACHINE, 12, 45, 300, 210, WS_VISIBLE,
+            FCF_SYSMENU
+    BEGIN
+        NOTEBOOK        IDD_MACHINE, 5, 20, 295, 185, BKS_ROUNDEDTABS | BKS_SPIRALBIND | WS_GROUP
+        DEFPUSHBUTTON   "OK",                           IDD_DID_OK,     103, 3, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancel",                       IDD_DID_CANCEL, 151, 3, 40, 14
+    END
+END
+
+DLGTEMPLATE IDD_MACH_DLG_DATA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+   FRAME  "Define machine configuration...", IDD_MACH_DLG, -10, 0, 80, 180, WS_VISIBLE | FCF_BORDER
+//            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LTEXT           "Machine name/Comments",        IDD_MACH_NAMET, 5, 136, 83, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown machine name",         IDD_MACH_NAMED, 7, 127, 174, 8, ES_MARGIN
+
+        LTEXT           "Motherboard",                  IDD_MACH_MOBOT, 5, 116, 83, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown motherboard make",     IDD_MACH_MOBOD, 7, 107, 174, 8, ES_MARGIN
+
+        LTEXT           "Motherboard Chipset",          IDD_MACH_CHIPT, 5,  96, 83, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown chipset",              IDD_MACH_CHIPD, 7, 87, 174, 8, ES_MARGIN
+
+        LTEXT           "Machine manufacturer",         IDD_MACH_MAKET, 5, 76, 83, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown manufacturer",         IDD_MACH_MAKED, 7, 67, 174, 8, ES_MARGIN
+
+        LTEXT           "Cache amount",                 IDD_MACH_CACHT, 5, 56, 83, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown external cache",       IDD_MACH_CACHD, 7, 47, 174, 8, ES_MARGIN
+
+        LTEXT           "Processor make/speed (best guess if auto-filled)",IDD_MACH_PROCT, 5, 36, 170, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown processor",            IDD_MACH_PROCD, 7, 27, 174, 8, ES_MARGIN
+
+        LTEXT           "Graphics card make/size",      IDD_MACH_GRAPT, 5, 16, 83, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        ENTRYFIELD      "Unknown graphics card",        IDD_MACH_GRAPD, 7,  7, 174, 8, ES_MARGIN
+
+    END
+END
+
+DLGTEMPLATE IDD_DISK LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+   FRAME  "Disk definition...", IDD_DISK_DLG, 120, 200, 240, 40, WS_VISIBLE, FCF_DLGBORDER |
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ENTRYFIELD      "Unknown disk controller make", IDD_DISK_NAME,  7, 20, 225, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK",                           IDD_DID_OK,     70, 3, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancel",                       IDD_DID_CANCEL, 130, 3, 40, 14
+    END
+END
+
+
+DLGTEMPLATE IDD_PROD_INFO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Sysbench", IDD_PROD_INFO, 50, 200, 230, 100, WS_VISIBLE,
+            FCF_TITLEBAR
+    BEGIN
+        ICON            IDD_SHOWWAIT4, IDI_PMICON, 32, 80, 20, 16 /* ,*/
+        CTEXT           "Sysbench", IDT_PRODINFO_TEXT1, 55, 85, 165, 8
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00C80000L
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "An OS/2 System benchmark program maintained by Trevor Hemsley.",
+                        IDT_PRODINFO_TEXT2, 9, 75, 220, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "E-mail Trevor.Hemsley@ntlworld.com",
+                        IDT_PRODINFO_TEXT9, 45, 68, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Original code by Henrik Harmsen 1994-10-01.",
+                        IDT_PRODINFO_TEXT3, 45, 58, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Thanks to:",
+                        IDT_PRODINFO_TEXT4, 45, 48, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Kai Uwe Rommel for the disk tests.",
+                        IDT_PRODINFO_TEXT5, 58, 41, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Al Aburto for the CPU tests.",
+                        IDT_PRODINFO_TEXT6, 58, 34, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Ralph Brown for PCI device id list.",
+                        IDT_PRODINFO_TEXT7, 58, 27, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        LTEXT           "Sam Detweiler for help all over the place.",
+                        IDT_PRODINFO_TEXT8, 58, 20, 170, 8, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "OK", IDT_BUTTON, 95, 3, 40, 14
+    END
+END
+
+
+

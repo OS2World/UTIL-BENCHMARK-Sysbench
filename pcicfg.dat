@@ -1,0 +1,1517 @@
+PCICFG ;<<-- signature - DO NOT CHANGE
+; PCI vendor/device IDs (last update 02jan98)
+; many of the device IDs in this file were gleaned from the
+; PCICODE list, available at
+;       http://www.halcyon.com/scripts/jboemler/pci/pcicode
+
+; This is version 11 of the file; 27-12-97
+;
+; Incorporates lists from:
+;
+; Ralf Brown's Inter54 interrupt list
+; Linux kernel source code version 2.1.25
+; Assorted Internet sites
+; My own research (Hardware passing under my nose from time to time)
+; lotsa Intel data sheets; Developer's Insight CD-ROM
+; PCI SIG's published List as at 31/7/97
+; CTPCI Program
+; Ralf Brown's PCI Identify program from inter55
+
+Vendor 003D Martin-Marietta
+Vendor 0E11 Compaq Computer
+  0001 EISA Bridge
+  0002 ISA Bridge
+  1000 Triflex/PCI CPU Bridge
+  2000 Triflex/PCI CPU Bridge
+  3032 QVision
+  3033 QVision 1280/p
+  3034 QVision 1280
+  4000 Triflex/PCI CPU Bridge
+  AE32 Netelligent 10/100 TX
+  AE34 Netelligent 10 T
+  AE35 Integrated NetFlex 3/P
+  AE40 Dual-port Netelligent 10/100 TX
+  AE43 ProLiant Integrated Netelligent 10/100
+  AE80 Smart-2SL Array Controller
+  B011 Dual-port Netelligent 10/100 TX
+  F130 ThunderLAN / NetFlex 3/P
+  F150 NetFlex 3/P with BNC
+Vendor 1000 Symbios (NCR)
+  0001 53C810(A/ALV) Fast SCSI
+  0002 53C820 Fast-Wide SCSI
+  0003 53C825(A) Fast-Wide SCSI
+  0004 53C815 Fast SCSI
+  0005 53C810AP Fast SCSI
+  0006 53C860 Ultra SCSI
+  000F 53C875 Ultra-Wide SCSI
+  1000 63c815 Fast-SCSI
+Vendor 1002 ATI Technologies Inc.
+  4158 68800AX (Mach32)
+  4354 215CT222
+  4358 210888CX
+  4758 210888GX (Mach64 WinTurbo)
+  5654 215VT222 Video Expression
+Vendor 1003 ULSI Systems
+  0201 US201 Graphics Controller
+Vendor 1004 VLSI Technologies
+  0005 VL82C591 CPU Bridge
+  0006 VL82C593 ISA Bridge
+  0007 VL82C594 Wildcat Sys.Ctrlr
+  0008 VL82C597 Wildcat ISA Bridge
+  0009 VL82C597
+  000C 82C541
+  000D 82C543
+  0101 82C532
+  0102 82C534
+  0104 82C535
+  0105 82C147
+  0200 82C975 RISC GUI Accelerator
+  0280 82C925 RISC GUI Accelerator
+Vendor 1005 Avance Logics
+  2301 ADL 2301 GUI Accelerator
+  2302 AVG2302 GUI Accelerator
+Vendor 1006 Reply Group
+Vendor 1007 Netframe
+Vendor 1008 Epson
+Vendor 100A Phoenix
+Vendor 100B National Semiconductor
+  0001 DP83810 Ethernet
+  D001 NS 87410 EIDE Controller
+Vendor 100C Tseng Labs
+  3202 ET4000/W32p-2
+  3205 ET4000/W32p-B
+  3206 ET4000/W32p-C
+  3207 ET4000/W32p-D
+  3208 ET6000
+Vendor 100D AST Computer
+Vendor 100E Weitek
+  9000 Power9000?
+  9001 Power9001
+  9100 Power9100
+Vendor 1010 Video Logic
+Vendor 1011 DEC
+  0001 DC21050 PCI-PCI Bridge
+  0002 DC21040 Tulip
+  0004 DecChip 21030
+  0009 DC21140 Tulip Fast Ethernet
+  000F DEFPA   FDDI
+  0014 DC21041 Tulip Plus
+  0016 DGLPB   ATM
+  0019 DC21142/43 PCI/Cardbus Ethernet
+  0021 21052   PCI-PCI Bridge
+  0022 21150   PCI-PCI Bridge
+  0024 21151   PCI-PCI Bridge
+  0025 21153   PCI-PCI Bridge
+  0026 21154   PCI-PCI Bridge
+Vendor 1012 Micronics Computers
+Vendor 1013 Cirrus Logic
+  0038 CL-GD7548 Video Controller
+  00A0 Cirrus 5430
+  00A4 Cirrus 5434-4
+  00A8 Cirrus 5434-8
+  00AC Cirrus 5436
+  00B8 Cirrus GD5446
+  1100 Cirrus 6729
+  1110 Cirrus 6832 PCMCIA/CardBus Ctrlr
+  1200 Cirrus 7542
+  1202 Cirrus 7543
+  1204 Cirrus 7541
+Vendor 1014 IBM
+  0002 MCA Bridge
+  0005 Alta Lite CPU Bridge
+  0007 Alta MP CPU Bridge
+  000A ISA Bridge
+  0017 CPU Bridge
+  0018 Auto LANStreamer
+  001B GXT-150P Graphics Adapter
+  001D IBM 82G2675
+  0020 MCA Bridge
+  0022 PCI-PCI Bridge
+  002E ? RAID SCSI
+  0036 Miami/PCI  32-bit LocalBus Bridge
+  0047 ?
+  0048 ?
+  004A ?
+  004B ?
+  004C ?
+  004D ?
+  004E ?
+  004F ?
+  0050 ?
+  0051 ?
+  0052 ?
+  0053 ? 25 MBit ATM controller
+  0055 ?
+  0059 ?
+  005A ?
+  005B ?
+Vendor 1015 LSI Logic Canada
+Vendor 1016 ICL Personal Systems
+Vendor 1017 Spea Software AG
+Vendor 1018 Unisys Corp.
+Vendor 1019 EliteGroup
+Vendor 101A NCR / AT&T GIS
+Vendor 101B Vitesse Semiconductors
+Vendor 101C Western Digital
+  0193 WD33C193A 8-bit SCSI
+  0196 SCSI Bridge
+  0197 WD33C197A 16-bit SCSI
+  0296 WD33C296A 16-bit SCSI
+  3193 WD7193 Fast SCSI-II
+  3197 WD7197 Fast-Wide SCSI-II
+  3296 WD33C296A Fast-Wide SCSI Bridge
+  4296 WD33C296 Wide Fast-20 Bridge
+  C24A 90C?
+Vendor 101E American Megatrends (AMI)
+  9010 MegaRAID
+  9030 ??? IDE Controller
+  9031 ??? IDE Controller
+  9032 ??? IDE/SCSI Controller
+  9033 ??? SCSI Controller
+  9040 ??? Multimedia card
+Vendor 101F Picturetel
+Vendor 1020 Hitachi Computer Prods.
+Vendor 1021 Oki Electric Industry
+Vendor 1022 AMD
+  2000 Am79c970 Lance/Am79c971
+  2020 Am53c974 SCSI
+  2040 79C974 Ethernet/SCSI
+Vendor 1023 Trident Microsystems
+  9320 ??? 32-bit GUI accelerator
+  9350 ??? 32-bit GUI accelerator
+  9360 ??? Flat-Panel controller
+  9420 Trident 9420
+  9440 Trident 9440
+  9460 Trident 9460
+  9660 Trident 9660
+  9682 ??? Multimedia accelerator
+Vendor 1024 Zenith Data Systems
+Vendor 1025 Acer
+  1435 M1435 VL Bridge
+  1445 M1445 VL Bridge+EIDE
+  1449 M1449 ISA Bridge
+  1451 M1451 Pentium chipset
+  1461 M1461 P54C chipset
+  1489 ALI M1489
+  1511 ALI M1511
+  1513 ALI M1513
+  3141 M3141 GUI accelerator VRAM
+  3143 M3143 GUI accelerator VRAM/DAC
+  3145 M3145 GUI accelerator VRAM
+  3147 M3147 GUI accelerator VRAM/DAC
+  3149 M3149 GUI accelerator VRAM
+  3151 M3151 GUI accelerator VRAM
+  5215 M4803 EIDE controller
+Vendor 1028 Dell
+Vendor 1029 Siemens Nixdorf
+Vendor 102A LSI Logic
+  0000 Hydra (Pentium chipset)
+  0010 Aspen (486 chipset)
+Vendor 102B Matrox Graphics, Inc.
+  0518 Atlas PX2085 (MGA-2)
+  0519 2064W (Millenium)
+  051A MGA 1064SG  "Mystique"
+  051B Millenium 2
+  0D10 MGA-Impression
+Vendor 102C Chips&Technologies
+  00B8 C&T 64310 GUI Accelerator
+  00D0 C&T 65545 Flat Panel/CRT VGA
+  00D8 C&T 65545 GUI Accelerator
+  00DC C&T 65548 GUI Accelerator
+  00E0 C&T 65550 LCD/CRT controller
+  00E4 C&T 65554 display
+  00E5 C&T 65555 VGA GUI Accelerator
+Vendor 102D Wyse Technlogogies
+Vendor 102E Olivetti
+Vendor 102F Toshiba America
+  0009 r4x00 Bridge
+Vendor 1030 TMC Research
+Vendor 1031 Miro / Micro Computer Products AG
+  5601 Miro 36050
+  5607 video in/out w/ MPEG
+Vendor 1032 Compaq Computer Corporation
+Vendor 1033 NEC
+  0001 PCI-to-486 Bridge
+  0002 PCI-to-VL98 Bridge
+  0003 ATM LAN controller
+  0004 r4000PCI Bridge
+  0005 PCI-to-486 Bridge
+  0006 GUI Accelerator
+  0007 PCI-to-UXbus Bridge
+  0008 GUI Accelerator
+  0009 PC-98 Graphics Controller
+Vendor 1034 Burndy / Framatome Connectors
+Vendor 1035 Computers&Comm Res.Lab
+Vendor 1036 Future Domain
+  0000 TMC-18C30
+Vendor 1037 Hitachi Micro
+Vendor 1038 AMP Incorporated
+Vendor 1039 Silicon Integrated Systems (SIS)
+  0001 SI 6201 True-Color GUI Accelerator
+  0002 SI 6205 VGA controller
+  0006 SI 85C501/2 Pentium Bridge
+  0008 SI 85C503/5513 ISA Bridge
+  0205 SI 6205
+  0406 SI 85C501/2 Pentium Bridge
+  0496 SI 85C496 VL Bridge
+  0596 Pentium chipset
+  0601 SI 601 EIDE controller
+  3602 IDE controller
+  5401 486 chipset
+  5511 SiS5511/5512 Pentium chipset
+  5513 SiS5513 EIDE controller
+  5581 Pentium chipset
+  5582 ISA Bridge
+  5596 Pentium chipset
+  6204 video decoder/MPEG
+  6205 PCI VGA controller
+Vendor 103A Seiko Epson
+Vendor 103B Tatung
+Vendor 103C Hewlett-Packard
+  1030 J2585A DeskDirect 10/100 PCI NIC
+  1040 J2973A DeskDirect 10BaseT PCI NIC
+  1041 J2585B DeskDirect 10/100 PCI NIC
+  1042 J2970A DeskDirect 10BaseT/2 PCI NIC
+  1064 79C970 PCnet Ethernet controller
+  2910 E2910A PCI-bus exerciser
+  2925 E2925A PCI-bus exerciser
+Vendor 103E Solliday Engineering
+Vendor 103F Logic Modeling
+Vendor 1040 Kubota Pacific / Accelgraphics
+Vendor 1041 Computrend
+Vendor 1042 PC Technology
+  1000 RZ1000
+  1001 RZ1001 / 37C922
+Vendor 1043 Asustek Computer, Inc.
+Vendor 1044 Distributed Processing Techn.
+  A400 DPT 2124A/9X SmartCache/RAID SCSI
+Vendor 1045 OPTi
+  A0F8 82C750 (Vendetta) USB controller
+  C178 82C178 LCD GUI Accelerator
+  C557 82C557 Viper-DP Desktop Chipset
+  C558 82C558 Viper-DP IPC
+  C567 82C750 (Vendetta), device 0
+  C568 82C750 (Vendetta), device 1
+  C621 82C621 IDE controller
+  C822 82C822 EIDE controller
+  C824 82C824 FireFox PC-Card controller
+  C825 82C825 FireBridge II
+Vendor 1046 IPC
+Vendor 1047 Genoa Systems Corp.
+Vendor 1048 Elsa GmbH
+Vendor 1049 Fountain Technology
+Vendor 104A SGS Thomson
+  0008 SGS 2000
+  0009 SGS 1764
+Vendor 104B BusLogic
+  0140 946C-2 SCSI-II
+  1040 946C SCSI
+  8130 Flashpoint LT  Ultra SCSI
+Vendor 104C Texas Instruments
+  0500 100 Mbit LAN controller
+  0508 tms380c2x
+  1000 TI PCI Eagle i/f
+  A001 TDC1570  64-bit ATM sar
+  A100 TDC1561  32-bit ATM sar
+  AC10 PCI1050  PCCard controller
+  AC11 PCI1053  PCCard controller
+  AC12 PCI1130  PCCard controller
+Vendor 104D Sony
+Vendor 104E Oak Technology
+  0107 OTI-107 Spitfire
+Vendor 104F Co-Time Computer
+Vendor 1050 Winbond
+  0000 ??? Ethernet controller
+  0001 83769
+  0105 82C105
+  0940 89C940 NE2000 PCI
+Vendor 1051 Anigma
+Vendor 1052 Young Micro Systems
+Vendor 1053 ?Young Micro Systems?
+Vendor 1054 Hitachi Ltd.
+  0001 PCI Bridge
+  0002 PCI-bus controller
+Vendor 1055 EFAR Microsystems
+  0810 486 Bridge
+  0922 Pentium/P54C Bridge
+  0926 ISA Bridge
+Vendor 1056 ICL
+Vendor 1057 Motorola
+  0001 MPC105 PowerPC chipset
+  0002 MPC106 PowerPC chipset
+Vendor 1058 Electr.&Telec. RSH
+Vendor 1059 Teknor Microsystems
+Vendor 105A Promise Technology
+  5300 Promise 5300
+Vendor 105B Foxconn Internt'l
+Vendor 105C Wipro Infotech Ltd
+Vendor 105D Number9
+  2309 Imagine 128
+  2339 Imagine 128-2
+  493D Imagine 128 3D (T2R)
+Vendor 105E VTech
+Vendor 105F Infotronic
+Vendor 1060 UMC
+  0001 UM82C881 (486 chipset)
+  0002 UM82C776 (ISA Bridge)
+  0101 UM8673F
+  0881 UM8881 (486 chipset)
+  0886 UM8886F (ISA Bridge)
+  0891 UM8891A (Pentium chipset)
+  1001 UM886A (dual IDE controller)
+  673A UM8886BF
+  8710 UM8710 VGA controller
+  886A UM8886A	ISA Bridge w/ EIDE
+  8881 UM8881F	HB4 486 PCI chipset
+  8886 UM8886F	ISA Bridge
+  8891 UM8891 (Pentium chipset)
+  9017 UM9017F
+  E881 UM8881 (486 chipset)
+  E886 UM8886N	ISA Bridge w/ EIDE
+  E891 UM8891N (Pentium chipset)
+Vendor 1061 X Tech (8x8, Inc.)
+  0001 AGX016
+  0002 IIT3204/3501 MPEG decoder
+Vendor 1062 Maspar
+Vendor 1063 Ocean Office Autom.
+Vendor 1064 Alcatel Cit
+Vendor 1065 Texas Micro
+Vendor 1066 PicoPower
+  0000 PT80C826 VL Bridge
+  0001 Vesuvius V1-LS System Controller
+  0002 Vesuvius V3-LS ISA Bridge
+  8002 Vesuvius V3-LS ISA Bridge
+Vendor 1067 Mitsubishi
+Vendor 1068 Diversified
+Vendor 1069 Mylex Corporation
+  0001 DAC960P Wide SCSI + RAID
+Vendor 106A Aten Research
+Vendor 106B Apple Computer
+Vendor 106C Hyundai
+Vendor 106D Sequent
+Vendor 106E DFI
+Vendor 106F City Gate
+Vendor 1070 Daewoo Telecom
+Vendor 1071 Mitac
+Vendor 1072 GIT Co. Ltd.
+Vendor 1073 Yamaha Corporation
+  0001 ?? 3D graphics controller
+  0002 YGV615  RPA3 3D graphics controller
+Vendor 1074 NexGen Microsys.
+  4E78 NexGen 82C501
+Vendor 1075 Advanced Integration
+Vendor 1076 Chaintech
+Vendor 1077 Q Logic
+  1020 ISP1020 Fast-Wide SCSI
+  1022 ISP1022 Fast-Wide SCSI
+Vendor 1078 Cyrix Corporation
+Vendor 1079 I-Bus
+Vendor 107A Networth
+Vendor 107B Gateway 2000
+Vendor 107C Goldstar Co. Ltd.
+Vendor 107D Leadtek Research
+  0000 P86C805  GLU-Logic
+Vendor 107E Interphase
+  0001 ATM interface
+  0002 100 vg amylan controller
+  0008 155 MBit ATM controller
+Vendor 107F DTC
+  0802 SL82C105  EIDE Controller
+Vendor 1080 Contaq Microsystems
+  0600 82C599
+Vendor 1081 Supermac
+Vendor 1082 EFA Corp. of America
+Vendor 1083 Forex Computer Corp.
+  0001 FR710  EIDE Controller
+  0613 ?? Host Bridge
+Vendor 1084 Parador
+Vendor 1085 Tulip Computers
+Vendor 1086 J.Bond
+Vendor 1087 Cache Computer
+Vendor 1088 Microcomputer Systems
+Vendor 1089 Data General
+Vendor 108A Bit3 Computer
+  0001 Model 617  PCI-VME Bus Adapter
+Vendor 108C Elonex PLC / Oakleigh Systems
+Vendor 108D Olicom
+  0001 ?? Ethernet Controller
+Vendor 108E Sun Microsystems
+Vendor 108F Systemsoft
+Vendor 1090 Encore
+Vendor 1091 Intergraph
+  0020 3D graphics processor
+  0021 3D graphics processor w/texture
+  0040 3D graphics frame buffer
+  0041 3D graphics frame buffer
+  0060 proprietary bus bridge
+  0720 Motion JPEG codec
+Vendor 1092 Diamond Computer
+Vendor 1093 National Instruments
+  C801 PCI-GPIB
+Vendor 1094 First Int'l Computer
+Vendor 1095 CMD Technology
+  0640 PCI-640/640A IDE
+  0642 IDE controller with RAID-1
+  0646 PCI-646 EIDE
+  0650 PBC0650A Fast SCSI-II
+Vendor 1096 Alacron
+Vendor 1097 Appian Technology
+  0038 ?? EIDE Controller
+Vendor 1098 Vision / Quantum Des.
+  0001 QD8500
+  0002 QD8580
+Vendor 1099 Samsung
+Vendor 109A Packard Bell
+Vendor 109B Gemlight Corporation
+Vendor 109C Megachips
+Vendor 109D Zida Technologies
+Vendor 109E Brooktree
+  0350 BT848/848A  TV/PCI with DMA Push
+  0351 BT849A Video Capture
+  2115 BtV 2115 Mediastream Controller
+  2125 BtV 2125 Mediastream Controller
+  8230 ?
+Vendor 109F Trigem Computer
+Vendor 10A0 Meidensha
+Vendor 10A1 Juko Electronics
+Vendor 10A2 Quantum Corp.
+Vendor 10A3 Everex Systems
+Vendor 10A4 Globe Manuf. Sales
+Vendor 10A5 Racal Interlan
+Vendor 10A6 Informtech
+Vendor 10A7 Benchmarq
+Vendor 10A8 Sierra Semicond.
+  0000 64-bit GUI accelerator
+Vendor 10A9 Silicon Graphics
+Vendor 10AA ACC Microelectronics
+  0000 ACC 2056  /  ACCM 2188
+Vendor 10AB Digicom
+Vendor 10AC Honeywell IASD
+Vendor 10AD Symphony Labs
+  0001 W83769F EIDE Controller
+  0103 sl82c103 PCI-IDE Controller
+  0105 sl82c105 bus-master PCI-IDE Ctrlr
+Vendor 10AE Cornerstone
+Vendor 10AF Microcomputer Systems
+Vendor 10B0 CardExpert Technol.
+Vendor 10B1 Cabletron Systems
+Vendor 10B2 Raytheon Company
+Vendor 10B3 Databook Inc.
+Vendor 10B4 STB Systems
+Vendor 10B5 PLX Technology
+  9036 PCI9036 interface chip
+  9050 PCI9050 Target PCI interface chip
+  9060 PCI9060xx interface chip
+  9080 PCI9080 PCI-to-Local Bus chip
+Vendor 10B6 Madge Networks
+  0001 Smart 16/4 Ringnode
+  0004 Smart 16/4 Ringnode
+  1000 Collage 25 ATM adapter
+  1001 Collage 155 ATM adapter
+Vendor 10B7 3com Corporation
+  5900 3C590     10base-T
+  5950 3C595TX  100base-TX
+  5951 3C595T4  100base-T4
+  5952 3C595MII 100base-MII
+  8811 token ring
+  9000 3C900-TPO Fast Etherlink
+  9001 3C900-COMBO Fast Etherlink
+  9050 3C905-TX Fast Etherlink 10/100
+  9051 3C905-T4 Fast Etherlink XL 10/100
+  9055 3C905B Fast Etherlink XL 10/100
+Vendor 10B8 SMC
+  0005 83C170QF Fast Ethernet Adapter 100bTX
+  1000 37C665 floppy disk controller
+  1001 37C922 floppy disk controller
+  A011 83C170QF Fast Ethernet controller
+Vendor 10B9 Acer Labs
+  1435 M1435 VL Bridge
+  1445 M1445 VL Bridge + EIDE
+  1449 M1449 ISA Bridge
+  1451 M1451 Pentium chipset
+  1461 M1461 P54C chipset
+  1489 M1489
+  1511 M1511
+  1513 M1513
+  3141 M3141 GUI accelerator
+  3143 M3143 GUI accelerator
+  3145 M3145 GUI accelerator
+  3147 M3147 GUI accelerator
+  3149 M3149 GUI accelerator
+  3151 M3151 GUI accelerator
+  5212 M4803
+  5215 MS4803 EIDE controller
+  5217 m5217 I/O
+  5219 m5219 I/O
+  5235 m5225 I/O
+  5240 ? IDE controller
+  5241 ? PCMCIA Bridge
+  5242 ? General Purpose Controller
+  5243 ? Bus Controller
+  5244 ? FCD Controller
+Vendor 10BA Mitsubishi
+Vendor 10BB Dapha
+Vendor 10BC ALR
+Vendor 10BD Surecom Technology
+  5240 IDE Controller
+  5241 PCMCIA Bridge
+  5242 general-purpose controller
+  5243 Bus controller
+  5244 Floppy-disk controller
+Vendor 10BE Tseng Labs
+Vendor 10BF Most Inc.
+Vendor 10C0 Boca Research
+Vendor 10C1 ICM Corp. Ltd.
+Vendor 10C2 Auspex Systems
+Vendor 10C3 Samsung Semicond.
+Vendor 10C4 Award Software
+Vendor 10C5 Xerox Corporation
+Vendor 10C6 Rambus Inc.
+Vendor 10C7 Media Vision
+Vendor 10C8 Neomagic Corporation
+  0000 graphics controller
+  0001 Magicgraph NM2070
+Vendor 10C9 DataExpert
+Vendor 10CA Fujitsu
+Vendor 10CB Omron
+Vendor 10CC Mentor Arc Inc.
+Vendor 10CD Advanced System Products
+  1100 SCSI I/O controller
+  1200 ABP940/ASC1200 Fast SCSI-II
+  1300 Fast-Wide SCSI controller
+Vendor 10CE Radius Inc.
+Vendor 10CF Citicorp TTI
+  2001 mb86605 Wide SCSI-2
+Vendor 10D0 Fujitsu Limited
+Vendor 10D1 Future+ Systems
+Vendor 10D2 Molex
+Vendor 10D3 Jabil Circuit Inc.
+Vendor 10D4 Hualon Microelectr.
+Vendor 10D5 Autologic Inc.
+Vendor 10D6 Cetia
+Vendor 10D7 BCM Adv. Research
+Vendor 10D8 Advanced Peripherals
+Vendor 10D9 Macronix
+Vendor 10DA Thomas-Conrad
+Vendor 10DB Rohm Research
+Vendor 10DC CERN/ECP/EDU
+  0001 SPSB PMC
+  0002 SPSB PCI
+  10DC ATT 2C15-3 FPGA
+Vendor 10DD Evans & Sutherland
+  0001 3D graphics processor
+Vendor 10DE NVidia
+Vendor 10DF Emulex Corporation
+  1AE5 Fibre Channel Host Adapter
+Vendor 10E0 IMS
+  5026 IMS5026/27/28 VL Bridge
+  5028 ISA Bridge
+  8849 VL Bridge
+  8853 ATM network card
+  9128 IMS9129 GUI accelerator
+Vendor 10E1 TekRAM Technology
+  690C TekRAM 690c
+Vendor 10E2 Aptix
+Vendor 10E3 Newbridge Microsystems
+  0000 CA91C042 VMEbus Bridge
+  0860 CA91C860 Motorola Processor Bridge
+Vendor 10E4 Tandem Computers
+Vendor 10E5 Micro Industries
+Vendor 10E6 Gainbery
+Vendor 10E7 Vadem
+Vendor 10E8 Applied Micro Circuits
+  2011 Q-Motion Video Capture/Edit board
+  4750 S5933 PCI controller
+  8043 LANai4.x Myrinet LANai interface
+  8088 Kingsberg Spacetec Format Synchronizer
+  8089 Kongsberg Spacetec Serial Output Board
+  811A PCI-IEEE1355-DS-DE interface
+Vendor 10E9 Alps Electronic
+Vendor 10EA Integraphics
+  1680 Integraphics 1680
+  1682 IGA-1682
+Vendor 10EB Artist Graphics
+  0101 3GA 64-bit graphics processor
+Vendor 10EC Realtek Semicond.
+  8029 NE-2000 compatible Ethernet
+  8129 RT8129 PCI Fast Ethernet Network Card
+Vendor 10ED ASCII Corp.
+  7310 V7310 VGA Video Overlay
+Vendor 10EE Xilinx
+Vendor 10EF Racore
+Vendor 10F0 Peritek
+Vendor 10F1 Tyan Computer
+Vendor 10F2 Achme Computer
+Vendor 10F3 Alaris
+Vendor 10F4 S-MOS Systems
+Vendor 10F5 NKK Corporation
+  A001 NDR4000   NR4600 Bridge
+Vendor 10F6 Creative Electronic
+Vendor 10F7 Matsushita Electric
+Vendor 10F8 Altos India Ltd.
+Vendor 10F9 PC Direct
+Vendor 10FA Truevision
+  0000 ? GUI Accelerator
+  0001 ? GUI Accelerator
+  0002 ? GUI Accelerator
+  0003 ? GUI Accelerator
+  0004 ? GUI Accelerator
+  0005 ? GUI Accelerator
+  0006 ? GUI Accelerator
+  0007 ? GUI Accelerator
+  0008 ? GUI Accelerator
+  0009 ? GUI Accelerator
+  000C Video Capture/Edit Card?
+  0010 ? GUI Accelerator
+  0011 ? GUI Accelerator
+  0012 ? GUI Accelerator
+  0013 ? GUI Accelerator
+  0014 ? GUI Accelerator
+  0015 ? GUI Accelerator
+Vendor 10FB Thesys Microelectr.
+Vendor 10FC I/O Data Device
+Vendor 10FD Soyo Technology
+Vendor 10FE Fast Electronic GmbH
+Vendor 10FF N-Cube
+Vendor 1100 Jazz Multimedia
+Vendor 1101 Initio
+  9100 8-bit Fast-Wide SCSI
+  9400 Fast-Wide SCSI
+  9700 Fast-Wide SCSI
+Vendor 1102 Creative Labs
+Vendor 1103 Triones Technologies
+Vendor 1104 Rasterops
+Vendor 1105 Sigma Designs
+Vendor 1106 VIA Technologies
+  0505 82C505 VL Bridge
+  0561 82C561 IDE
+  0571 AMD-645 PBC, IDE Controller
+  0576 82C576 P54 Controller
+  0585 VT82C585VP Host Bus-PCI Bridge
+  0586 AMD-645 Peripheral Bus Controller
+  0595 AMD-640 System Controller
+  0926 VT86C926 NE2000-compatible Ethernet controller
+  1000 82C570MV P54 Controller
+  1106 82C570MV ISA Bridge + IDE
+  1571 82C416
+  3038 AMD-645 PBC, USB controller
+  3040 AMD-645 PBC, Power Management
+Vendor 1107 Stratus Computer
+Vendor 1108 Proteon Inc.
+  0100 p1690plus-AA  Token Ring
+  0101 p1690plus-AB 2-port Token Ring
+Vendor 1109 Cogent Data Techn.
+  1400 EM110TX PCI Fast Ethernet
+Vendor 110A Siemens Nixdorf
+  0002 Piranha PCI-EIDE-Adapter (2 Port)
+  4942 FPGA I-Bus Tracer for MBD
+  6120 SZB6120 Multimedia Adapter
+Vendor 110B Xenon Microsystems
+Vendor 110C Mini-Max
+Vendor 110D ZNyX Corporation
+Vendor 110E CPU Technology
+Vendor 110F Ross Technology
+Vendor 1110 Powerhouse
+Vendor 1111 S.C.O.
+Vendor 1112 Rockwell
+  2200 FDDI adapter
+  2300 Fast Ethernet adapter
+  2340 four-port Fast Ethernet
+  2400 ATM adapter
+Vendor 1113 Accton Technology
+Vendor 1114 Atmel
+Vendor 1115 DuPont Pixel Systems
+Vendor 1116 Data Translation
+Vendor 1117 Datacube Inc.
+  9500 MAX-LC SuperVGA
+  9501 MAX-LC image processing
+Vendor 1118 Berg Electronics
+Vendor 1119 Vortex Computersys.
+  0000 GDT6000/6020/6050 SCSI RAID
+  0001 GDT6000/6010 SCSI RAID
+  0002 GDT6110/6510 SCSI RAID
+  0003 GDT6120/6520 two-channel SCSI RAID
+  0004 GDT6530 three-channel SCSI RAID
+  0005 GDT6550 five-channel SCSI RAID
+  0006 GDT6x17
+  0007 GDT6x27
+  0008 GDT6537
+  0009 GDT6557
+  000A GDT6x15
+  000B GDT6x25
+  000C GDT6535
+  000D GDT6555
+Vendor 111A Efficient Networks
+  0000 155P-MF1 ATM FPGA
+  0002 ATM ASIC
+Vendor 111B Teledyne
+Vendor 111C Tricord Systems
+  0001 Powerbus Bridge
+Vendor 111D Integrated Dev.Tech
+Vendor 111E Eldec Corporation
+Vendor 111F Prec. Digital Images
+  4A47 Precision MX Video Engine interface
+  5243 Frame Capture Bus interface
+Vendor 1120 EMC Corporation
+Vendor 1121 Zilog
+Vendor 1122 Multi-Tech Systems
+Vendor 1123 Excellent Design, Inc.
+Vendor 1124 Leutron Vision AG
+Vendor 1125 Eurocore
+Vendor 1126 Vigra
+Vendor 1127 FORE Systems
+  0210 PCA200PC
+  0300 PCA200E
+Vendor 1129 Firmworks
+Vendor 112A Hermes Electronics
+Vendor 112B Linotype-Hell AG
+Vendor 112C Zenith Data Systems
+Vendor 112D Ravicad
+Vendor 112E Infomedia MicroElectronics
+  0000 EIDE/HD and IDE/CD-ROM controller
+  000B EIDE/HD and IDE/CD-ROM controller
+Vendor 112F Imaging Technologies
+  0000 ICPCI
+  0001 video frame grabber/processor
+Vendor 1130 Computervision
+Vendor 1131 Philips Semiconductors
+  7146 SAA7146 Multimedia Bridge Scaler
+Vendor 1132 Mitel Corporation
+Vendor 1133 Eicon Technology
+Vendor 1134 Mercury Comp. Systems
+  0001 Raceway Bridge
+Vendor 1135 Fuji Xerox Co Ltd
+  0001 Printer Controller
+Vendor 1136 Momentum Data Systems
+Vendor 1137 Cisco Systems Inc
+Vendor 1138 Ziatech Corporation
+  8905 8905 STD-32 Bridge
+Vendor 1139 Dynamic Pictures Inc
+  0001 VGA-compatible 3D graphics
+Vendor 113A FWB Inc
+Vendor 113B Network Computing Devices
+Vendor 113C PLX (Cyclone Microsystems)
+  0000 PCI9060 i960 Bridge
+  0001 PLX 9060 i960 evaluation platform
+  0911 PCI 911  i960Jx Intelligent I/O
+  0912 PCI 912  i960Cx Intelligent I/O
+  0913 PCI 913  i960Hx Intelligent I/O
+  0914 PCI 914	I/O controller w/ secondary PCI bus
+Vendor 113D Leading Edge Products
+Vendor 113E Sanyo Electric Co
+Vendor 113F Equinox Systems
+Vendor 1140 Intervoice Inc
+Vendor 1141 Crest Microsystem
+  0001 EIDE/ATAPI super adapter
+Vendor 1142 Alliance Semiconductor
+  3210 ProMotion 3210
+  6410 GUI Accelerator
+  6412 GUI Accelerator
+  6420 GUI Accelerator
+  6422 Provideo
+  6424 GUI Accelerator
+  6426 GUI Accelerator
+Vendor 1143 Netpower, Inc
+Vendor 1144 Cincinnati Milacron
+  0001 Noservo Controller
+Vendor 1145 Workbit Corporation
+Vendor 1146 Force Computers
+Vendor 1147 Interface Corp.
+Vendor 1148 Schneider & Koch
+  4000 FDDI adapter
+Vendor 1149 Win System Corp.
+Vendor 114A Vmic
+  7587 VME
+Vendor 114B Canopus Co.
+Vendor 114C Annabooks
+Vendor 114D IC Corporation
+Vendor 114E Nikon Systems Inc.
+Vendor 114F Digi Int'l / Stargate
+  0003 RightSwitch
+Vendor 1150 Thinking Machines
+Vendor 1151 JAE Electronics Inc
+Vendor 1152 Megatek
+Vendor 1153 Land Winn Electronic
+Vendor 1154 Melco Inc.
+Vendor 1155 Pine Technology Ltd
+Vendor 1156 Periscope Engineering
+Vendor 1157 Avsys Corporation
+Vendor 1158 Voarx R&D Inc.
+  3011 Tokenet/vg 1001/10m anylan
+  9050 Lanfleet/Truevalue
+  9051 Lanfleet/Truevalue
+Vendor 1159 MuTech
+  0001 MV1000
+Vendor 115A Harlequin Ltd.
+Vendor 115B Parallax Graphics
+Vendor 115C Photron Ltd.
+Vendor 115D Xircom
+Vendor 115E Peer Protocols Inc
+Vendor 115F Maxtor Corporation
+Vendor 1160 Megasoft Inc.
+Vendor 1161 PFU Ltd.
+  0001 Host Bridge
+Vendor 1162 OA Laboratory Co Ltd
+Vendor 1163 Rendition (Creative Labs)
+  0001 3D Blaster
+Vendor 1164 Advanced Periph Tech
+Vendor 1165 Imagraph Corporation
+  0001 Motion JPEG record/play w/ audio
+Vendor 1166 Pequr Technology Inc.
+Vendor 1167 Mutoh Industries, Inc.
+Vendor 1168 Thine Electronics Inc
+Vendor 1169 Centre for Dev. of Advanced Computing
+Vendor 116A Polaris Communications
+Vendor 116B Connectware Inc
+Vendor 116C Intelligent Resources Integrated Systems
+Vendor 116E Electronics for Imaging
+Vendor 116F Workstation Technology
+Vendor 1170 Inventec Corporation
+Vendor 1171 Loughborough Sound Images
+Vendor 1172 Altera Corporation
+Vendor 1173 Adobe Systems
+Vendor 1174 Bridgeport Machines
+Vendor 1175 Mitron Computer Inc.
+Vendor 1176 SBE
+Vendor 1177 Silicon Engineering
+Vendor 1178 Alfa Inc
+  AFA1 Fast Ethernet
+Vendor 1179 Toshiba America Info Systems
+  0601 ? CPU-to-PCI bridge
+  0602 PCI to ISA-Bridge for Notebooks
+  0603 PCI to CardBus-Bridge for Notebooks
+  0604 PCI to PCI-Bridge for Notebooks
+  060A ToPIC95 CardBus controller
+Vendor 117A A-Trend Technology
+Vendor 117B L.G. Electronics, Inc.
+Vendor 117C Atto Technology
+Vendor 117D Becton Dickinson
+Vendor 117E T/R Systems
+Vendor 117F Integrated Circuit Systems
+Vendor 1180 Ricoh Co Ltd
+Vendor 1181 Telmatics International
+Vendor 1183 Fujikura Ltd
+Vendor 1184 Forks Inc
+Vendor 1185 Dataworld
+Vendor 1186 D-Link System Inc
+Vendor 1187 Advanced Techn. Labs
+Vendor 1188 Shima Seiki Manufacturing
+Vendor 1189 Matsushita Electronics
+  1592 ?
+Vendor 118A Hilevel Technology
+Vendor 118B Hypertec Pty Ltd.
+Vendor 118C Corollary Inc
+  0014 PCIB  C-bus II to PCI bridge chip
+Vendor 118D BitFlow Inc
+  0001 Raptor-PCI frame grabber
+  0012 Model 12 Road Runner Frame Grabber
+  0014 Model 14 Road Runner Frame Grabber
+  0024 Model 24 Road Runner Frame Grabber
+  0044 Model 44 Road Runner Frame Grabber
+  0112 Model 12 Road Runner Frame Grabber
+  0114 Model 14 Road Runner Frame Grabber
+  0124 Model 24 Road Runner Frame Grabber
+  0144 Model 44 Road Runner Frame Grabber
+  0212 Model 12 Road Runner Frame Grabber
+  0214 Model 14 Road Runner Frame Grabber
+  0224 Model 24 Road Runner Frame Grabber
+  0244 Model 44 Road Runner Frame Grabber
+  0312 Model 12 Road Runner Frame Grabber
+  0314 Model 14 Road Runner Frame Grabber
+  0324 Model 24 Road Runner Frame Grabber
+  0344 Model 44 Road Runner Frame Grabber
+Vendor 118E Hermstedt GmbH
+Vendor 118F Green Logic
+Vendor 1190 (unknown vendor)
+Vendor 1191 Artop Electric
+  0001 IDE controller
+  0002 IDE controller
+  0003 SCSI-2 cache controller
+  0004 ATP8400 ASIC cache accelerator
+  8001 SCSI-2 cache controller
+  8002 SCSI-2 controller
+Vendor 1192 Densan Co. Ltd
+Vendor 1193 Cabletron / Zeitnet Inc.
+  0001 Zeitnet 1221
+  0002 Zeitnet 1225
+Vendor 1194 Toucan Technology
+Vendor 1195 Ratoc System Inc
+Vendor 1196 Hytec Electronics Ltd
+Vendor 1197 Gage Applied Sciences
+Vendor 1198 Lambda Systems Inc
+Vendor 1199 Digital Communications Assoc.
+Vendor 119A Mind Share Inc.
+Vendor 119B Omega Micro Inc.
+Vendor 119C Information Technology Inst.
+Vendor 119D Bug Sapporo Japan
+Vendor 119E Fujitsu
+Vendor 119F Bull Hn Information Systems
+Vendor 11A0 Convex Computer Corporation
+Vendor 11A1 Hamamatsu Photonics K.K.
+Vendor 11A2 Sierra Research and Technology
+Vendor 11A3 Deuretzbacher GmbH & Co. Eng. KG
+Vendor 11A4 Barco
+Vendor 11A5 MicroUnity Systems Eng.
+Vendor 11A6 Pure Data
+Vendor 11A7 Power Computing Corp.
+Vendor 11A8 Systech Corp.
+Vendor 11A9 InnoSys Inc.
+  4240 AMCC S5933Q Intelligent Serial Card
+Vendor 11AA Actel
+Vendor 11AB Galileo Technology
+  0146 GT-64010 System Controller for R46xx CPU
+  4801 GT-48001 8-port switched Ethernet ctrlr
+Vendor 11AC Canon Inform. Systems
+Vendor 11AD Lite-On Communications
+Vendor 11AE Scitex Corporation
+Vendor 11AF Pro-Log Corporation
+Vendor 11B0 V3 Semiconductor Inc.
+  0292 V292PBC  Am29030/40 Bridge
+  0960 V96xPBC  i960 Bridge
+  C960 V96DPC   i960 dual PCI Bridge
+Vendor 11B1 Apricot Computers
+Vendor 11B2 Eastman Kodak
+Vendor 11B3 Barr Systems Inc.
+Vendor 11B4 Leitch Technology Int'l
+Vendor 11B5 Radstone Technology Plc
+Vendor 11B6 United Video Corp
+Vendor 11B7 Motorola
+Vendor 11B8 Xpoint Technologies
+Vendor 11B9 Pathlight Technology
+  C0ED SSA Controller
+Vendor 11BA Videotron Corp
+Vendor 11BB Pyramid Technology
+Vendor 11BC Network Peripherals
+Vendor 11BD Pinnacle Systems Inc.
+Vendor 11BE International Microcircuits
+Vendor 11BF Astrodesign, Inc.
+Vendor 11C0 (unknown vendor)
+Vendor 11C1 AT&T Microelectronics
+Vendor 11C2 Sand Microelectronics
+Vendor 11C3 NEC Corporation
+Vendor 11C4 Document Technologies Ind.
+Vendor 11C5 Shiva Corporatin
+Vendor 11C6 Dainippon Screen Mfg. Co. Ltd.
+Vendor 11C7 D.C.M. Data Systems
+Vendor 11C8 Dolphin Interconnect Sol.
+  0658 PSB  PCI-SCI Bridge
+Vendor 11C9 MAGMA
+  0010 ? 16-line serial DMA
+  0011 ? 4-line serial DMA
+Vendor 11CA LSI Systems Inc
+Vendor 11CB Specialix Research
+  2000 PCI-9050 Target Interface
+  4000 SUPI-1 Target Interface
+  8000 T255 Bridge
+Vendor 11CC Michels & Kleberhoff
+Vendor 11CD HAL Computer Systems
+Vendor 11CE Netaccess
+Vendor 11CF Pioneer Electronic Corp.
+Vendor 11D0 Lockheed Martin Federal Systems
+Vendor 11D1 Auravision
+  01F7 VxP524 PCI Video Processor
+Vendor 11D2 Intercom, Inc.
+Vendor 11D3 Trancell Systems Inc.
+Vendor 11D4 Analog Devices
+Vendor 11D5 Ikon Corporation
+Vendor 11D6 Tekelec Telecom
+Vendor 11D7 Trenton Technology, Inc.
+Vendor 11D8 Image Technologies Development
+Vendor 11D9 TEC Corporation
+Vendor 11DA Novell
+Vendor 11DB Sega Enterprises, Ltd.
+Vendor 11DC Questra Corporation
+Vendor 11DD Crosfield Electronics Ltd.
+Vendor 11DE Zoran Corporation
+  6057 Zoran ZR36057 MotionJPEG
+Vendor 11DF New Wave PDG		      
+Vendor 11E0 (unknown vendor)		      
+Vendor 11E1 GEC Plessey Semi Inc.	      
+Vendor 11E2 Samsung Information Systems America
+Vendor 11E3 Quicklogic Corporation	      
+Vendor 11E4 Second Wave Inc.		      
+Vendor 11E5 IIX Consulting		      
+Vendor 11E6 Mitsui-Zosen System Research      
+Vendor 11E7 (unknown vendor)		      
+Vendor 11E8 Digital Processing Systems Inc.   
+Vendor 11E9 (unknown vendor)		      
+Vendor 11EA Elsag Bailey		      
+Vendor 11EB Formation Inc.		      
+Vendor 11EC Coreco Inc.			      
+Vendor 11ED Mediamatics			      
+Vendor 11EE Dome Imaging Systems Inc.	      
+Vendor 11EF Nicolet Technologies B.V.	      
+Vendor 11F0 Compu-Shack GmbH		      
+Vendor 11F1 Symbios Logic Inc.		      
+Vendor 11F2 Picture Tel Japan K.K.	      
+Vendor 11F3 Keithley Metrabyte		      
+Vendor 11F4 Kinetic Systems Corporation	      
+Vendor 11F5 Computing Devices International   
+Vendor 11F6 Powermatic Data Systems Ltd. / Compex USA, Inc.
+  1401 ReadyLINK RL2000 10MBit NIC
+Vendor 11F7 Scientific Atlanta		      
+Vendor 11F8 PMC-Sierra Inc.                   
+  7375 PM7375 LASAR-155 ATM SAR
+Vendor 11F9 I-Cube Inc.
+Vendor 11FA Kasan Electronics Company, Ltd.
+Vendor 11FB Datel Inc.
+Vendor 11FC (unknown vendor)
+Vendor 11FD High Street Consultants
+Vendor 11FE Comtrol Corporation
+  0001 RocketPort 8 Oct
+  0002 RocketPort 8 Intf
+  0003 RocketPort 16 Intf
+  0004 RocketPort 32 Intf
+Vendor 11FF Scion Corporation
+Vendor 1200 CSS Corporation
+Vendor 1201 Vista Controls Corporation
+Vendor 1202 Network General Corporation
+Vendor 1203 Bayer Corporation, AGFA Division
+Vendor 1204 Lattice Semiconductor Corp.
+Vendor 1205 Array Corporation
+Vendor 1206 Amdahl Corporation
+Vendor 1207 (unknown vendor)
+Vendor 1208 Parsytec GmbH
+  4853 ? HS-Link Device
+Vendor 1209 SCI Systems Inc.
+Vendor 120A Synaptel
+Vendor 120B Adaptive Solutions
+Vendor 120C (unknown vendor)
+Vendor 120D Compression Labs, Inc.
+Vendor 120E Cyclades
+  0100 Cyclom-Y Multiport Serial Card
+  0101 Cyclom Y Hi
+  0200 Cyclom-Z Intelligent Multiport Serial
+  0201 Cyclom Z Hi
+Vendor 120F Essential Communications
+Vendor 1210 Hyperparallel Technologies
+Vendor 1211 Braintech Inc.
+Vendor 1212 Kingston Technologies, Inc.
+Vendor 1213 Applied Intelligent Systems, Inc.
+Vendor 1214 Performance Technologies, Inc.
+Vendor 1215 Interware Co. Ltd.
+Vendor 1216 Purup Prepress A/S
+Vendor 1217 02 Micro, Inc.
+Vendor 1218 Hybricon Corporation
+Vendor 1219 First Virtual Corporation
+Vendor 121A 3DFX Interactive, Inc.
+  0001 Voodoo Graphics (Orchid Righteous 3D,etc.)
+Vendor 121B Advanced Telecomm Modules
+Vendor 121C Nippon Texaco, Ltd.
+Vendor 121D Lippert Auomationstechnik GmbH
+Vendor 121E CSPI
+Vendor 121F Arcus Technology, Inc.
+Vendor 1220 Ariel Corporation
+  1220 AMCC 5933  TMS320C80 DSP/Imaging Board
+Vendor 1221 Contec Co., Ltd.
+Vendor 1222 Ancor Communications, Inc.
+Vendor 1223 Heurikon/Computer Products
+Vendor 1224 Interactive Images
+Vendor 1225 Power I/O, Inc.
+Vendor 1226 (unknown vendor)
+Vendor 1227 Tech-Source
+Vendor 1228 Norsk Elektro Optikk A/S
+Vendor 1229 Data Kinesis Inc.
+Vendor 122A Integrated Telecom
+Vendor 122B LG Industrial Systems Co. Ltd.
+Vendor 122C Sican GmbH
+Vendor 122D Aztech Systems Ltd.
+Vendor 122E Xyratex
+Vendor 122F Andrew Corporation
+Vendor 1230 Fishcamp Engineering
+Vendor 1231 Woodward McCoach, Inc.
+Vendor 1232 GPT Limited
+Vendor 1233 Bus-Tech, Inc.
+Vendor 1234 Technical Corp.
+Vendor 1235 Risq Modular Systems, Inc.
+Vendor 1236 Sigma Designs Corporation
+Vendor 1237 Alta Technology Corporation
+Vendor 1238 Adtran
+Vendor 1239 The 3DO Company
+Vendor 123A Visicom Laboratories, Inc.
+Vendor 123B Seeq Technology, Inc.
+Vendor 123C Century Systems, Inc.
+Vendor 123D Engineering Design Team, Inc.
+Vendor 123E Sumutech, Inc.
+Vendor 123F C-Cube Microsystems
+Vendor 1240 Marathon Technologies Corp.
+Vendor 1241 DSC Communications
+Vendor 1242 (unknown vendor)
+Vendor 1243 Delphax
+Vendor 1244 AVM Audiovisuelles Mktg & Computer GmbH
+  0700 AVM B1 ISDN controller
+Vendor 1245 A.P.D., S.A.
+Vendor 1246 Dipix Technologies, Inc.
+Vendor 1247 Xylon Research, Inc.
+Vendor 1248 Central Data Corporation
+Vendor 1249 Samsung Electronics Co., Ltd.
+Vendor 124A AEG Electrocom GmbH
+Vendor 124B Greenspring Computers Inc.
+Vendor 124C Solitron Technologies, Inc.
+Vendor 124D Stallion Technologies, Inc.
+Vendor 124E Cylink
+Vendor 124F Infortrend Technology, Inc.
+Vendor 1250 Hitachi Microcomputer System Ltd.
+Vendor 1251 VLSI Solution Oy
+Vendor 1252 (unknown vendor)
+Vendor 1253 Guzik Technical Enterprises
+Vendor 1254 Linear Systems Ltd.
+Vendor 1255 Optibase Ltd.
+  1110 MPEG Forge
+  1210 MPEG Fusion
+  2120 VideoPlex
+  2130 VideoQuest
+Vendor 1256 Perceptive Solutions, Inc.
+Vendor 1257 Vertex Networks, Inc.
+Vendor 1258 Gilbarco, Inc.
+Vendor 1259 Allied telesyn International
+Vendor 125A ABB Power Systems
+Vendor 125B Asix Electronics Corporation
+Vendor 125C Aurora Technologies, Inc.
+Vendor 125D ESS Technology
+Vendor 125E SpecialVideo Engineering SRL
+Vendor 125F Concurrent Technologies, Inc.
+Vendor 1260 Harris Semiconductor
+Vendor 1261 Matsushita-Kotobuki Electronics Industries
+Vendor 1262 ES Computer Company, Ltd.
+Vendor 1263 Sonic Solutions
+Vendor 1264 Aval Nagasaki Corporation
+Vendor 1265 Casio Computer Co., Ltd.
+Vendor 1266 Microdyne Corporation
+Vendor 1267 S.A. Telecommunications
+Vendor 1268 Tektronix
+Vendor 1269 Thomson-CSF/TTM
+Vendor 126A Lexmark International, Inc.
+Vendor 126B Adax, Inc.
+Vendor 126C Northern Telecom
+Vendor 126D Splash Technology, Inc.
+Vendor 126E Sumitomo Metal Industries, Ltd.
+Vendor 126F Silicon Motion, Inc.
+Vendor 1270 Olympus Optical Co., Ltd.
+Vendor 1271 GW Instruments
+Vendor 1272 Telematics International
+Vendor 1273 Hughes Network Systems
+Vendor 1274 Ensoniq
+Vendor 1275 Network Appliance Corporation
+Vendor 1276 Switched Network Tecnologies, Inc.
+Vendor 1277 Comstream
+Vendor 1278 Transtech Parallel Systems Ltd.
+Vendor 1279 Transmeta Corporation
+Vendor 127A Rockwell International
+Vendor 127B Pixera Corporation
+Vendor 127C Crosspoint Solutions, Inc.
+Vendor 127D Vela Research
+Vendor 127E Winnov, L.P.
+Vendor 127F Fujifilm
+Vendor 1280 Photoscript Group Ltd.
+Vendor 1281 Yokogawa Electric Corporation
+Vendor 1282 Davicom Semiconductor, Inc.
+Vendor 1283 Integratec Technology Express, Inc.
+Vendor 1284 Sahara Networks, Inc.
+Vendor 1285 Platform Technologies, Inc.
+Vendor 1286 Mazet GmbH
+Vendor 1287 M-Pact, Inc.
+Vendor 1288 Timestep Corporation
+Vendor 1289 AVC Technology, Inc.
+Vendor 128A Asante Technologies, Inc.
+Vendor 128B Transwitch Corporation
+Vendor 128C Retix Corporation
+Vendor 128D G2 Networks, Inc.
+Vendor 128C Retix Corp
+Vendor 128E Samho Multi Tech Ltd.
+Vendor 128F Tateno Dennou, Inc.
+Vendor 1290 Sord Computer Corporation
+Vendor 1291 NCS Computer Italia
+Vendor 1292 Tritech Microelectronics International PTE
+Vendor 1293 Media Reality Technology
+Vendor 1294 Rhetorex, Inc.
+Vendor 1295 Imagenation Corporation
+Vendor 1296 Kofax Image Products
+Vendor 1297 Holco Ent Co, Ltd / Shuttle Computer
+Vendor 1298 Spellcaster Telecommunications Inc.
+Vendor 1299 Knowledge Technology Lab.
+Vendor 129A VMetro, Inc.
+Vendor 129B Image Access
+Vendor 129C Jaycor / Xantel Corporation
+Vendor 129D Compcore Multimedia, Inc.
+Vendor 129E Victor Company of Japan, Ltd.
+Vendor 129F OEC Medical Systems, Inc.
+Vendor 12A0 Allen-Bradley Company
+Vendor 12A1 Simpact Associates, Inc.
+Vendor 12A2 Newgen Systems Corporation
+Vendor 12A3 Lucent Technologies
+Vendor 12A4 NTT Electronics Technology Company
+Vendor 12A5 Vision Dynamics Ltd.
+Vendor 12A6 Scalable Networks, Inc.
+Vendor 12A7 AMO GmbH
+Vendor 12A8 News Datacom
+Vendor 12A9 Xiotech Corporation
+Vendor 12AA SDL Communications, Inc.
+Vendor 12AB Yuan Yuan Enterprise Co., Ltd.
+Vendor 12AC MeasureX Corporation
+Vendor 12AD Multidata GmbH
+Vendor 12AE Alteon Networks, inc.
+Vendor 12AF TDK USA Corporation
+Vendor 12B0 Jorge Scientific Corporation
+Vendor 12B1 GammaLink
+Vendor 12B2 General Signal Networks
+Vendor 12B3 Inter-Face Co. Ltd.
+Vendor 12B4 FutureTel Inc.
+Vendor 12B5 Granite Systems Inc.
+Vendor 12B6 Natural Microsystems
+Vendor 12B7 Acumen
+Vendor 12B8 Korg
+Vendor 12B9 US Robotics
+Vendor 12BA PMC Sierra
+Vendor 12BB Nippon Unisoft Corporation
+Vendor 12BC Array Microsystems
+Vendor 12BD Computerm Corp.
+Vendor 12BE Anchor Chips
+  3041 AN3041Q CO-MEM PCI Bus Interface/Cache
+Vendor 12BF Fujifilm Microdevices
+Vendor 12C0 InfiMed
+Vendor 12C1 GMM Research Corp.
+Vendor 12C2 Mentec Limited
+Vendor 12C3 Holtek Microelectronics Inc.
+Vendor 12C4 Connect Tech Inc.
+Vendor 12C5 Picture Elements
+  0081 PCIVST  PCI Thresholding Engine
+Vendor 12C6 Mitani Corporation
+Vendor 12C7 Dialogic Corporation
+Vendor 12C8 G Force Co, Ltd.
+Vendor 12C9 Gigi Operations
+Vendor 12CA Integrated Computing Engines
+Vendor 12CB Antex Electronics Corporation
+Vendor 12CC Pluto Technologies International
+Vendor 12CD Aims Lab
+Vendor 12CE Netspeed, Inc.
+Vendor 12CF Prophet Systems, Inc.
+Vendor 12D0 GDE Systems, Inc.
+Vendor 12D1 Psitech
+Vendor 12D2 Nvidia / SGS Thomson
+Vendor 12D3 Vingmed Sound A/S
+Vendor 12D4 DGM&S
+Vendor 12D5 Equator Technologies
+Vendor 12D6 Analogic Corporation
+Vendor 12D7 Biotronic SRL
+Vendor 12D8 Pericom Semiconductor
+Vendor 12D9 Aculab PLC
+Vendor 12DA True Time
+Vendor 12DB Annapolis Micro Systems, Inc.
+Vendor 12DC Symicron Computer Communication Ltd.
+Vendor 12DD Management Graphics
+Vendor 12DE Rainbow Technologies
+Vendor 12DF SBS Technologies Inc.
+Vendor 12E0 Chase Research
+  0010 ST16C654 Quad UART
+  0020 ST16C654 Quad UART
+  0030 ST16C654 Quad UART
+Vendor 12E1 Nintendo Co, Ltd.
+Vendor 12E2 Datum Inc, Bancomm-Timing Division
+Vendor 12E3 Imation Corp - Medical Imaging Systems
+Vendor 12E4 Brooktrout Technology Inc.
+Vendor 12E5 Apex Inc / XCD Inc.
+Vendor 12E6 Cirel Systems
+Vendor 12E7 Sunsgroup Corporation / Sebring Systems
+Vendor 12E8 CRISC Corporation
+Vendor 12E9 GE Spacenet
+Vendor 12EA Zuken
+Vendor 12EB Aureal Semiconductor
+  0001 AU8820 Vortex Digital Audio Processor
+Vendor 12EC 3A International, Inc.
+Vendor 12ED Optivision Inc.
+Vendor 12EE Orange Micro
+Vendor 12EF Vienna Systems
+Vendor 12F0 Pentek
+Vendor 12F1 Sorenson Vision Inc.
+Vendor 12F2 GammaGraphx, Inc.
+Vendor 12F3 XING, Inc.
+Vendor 12F4 Megatel
+Vendor 12F5 Forks
+Vendor 12F6 Dawson France
+Vendor 12F7 Cognex
+Vendor 12F8 Electronic-Design GmbH
+Vendor 12F9 FourFold Technologies
+Vendor 12FE ESD Electronic System Design GmbH
+Vendor 1331 RadiSys Corporation
+Vendor 1335 Videomail, Inc.
+Vendor 1347 Odetics
+Vendor 135D ABB Network Partner AB
+Vendor 137E Patriot Scientific Corp.
+Vendor 1C1C Symphony
+  0001 Symphony 82C101 IDE Controller
+Vendor 1DE1 TekRAM
+  DC29 DC290/DC290M  EIDE Controller
+Vendor 270F Chaintech Computer Co., Ltd.
+Vendor 3000 Hansol Electronics Inc.
+Vendor 3D3D 3DLabs
+  0001 GLINT 300SX
+  0004 3C0SX GUI Accelerator
+Vendor 4005 Avance Logic, Inc.
+  2301 AVL2301 GUI Accelerator
+  2302 ALG-2302
+  2303 AVG2302 GUI Accelerator
+Vendor 4468 BRIDGEPORT MACHINES
+Vendor 4680 UMAX Computer Corp.
+Vendor 4B10 Buslogic Inc.
+  3080 ? SCSI-ti
+  4010 ? Fast-Wide SCSI-2
+Vendor 5333 S3
+  5631 86C325 ViRGE 3D GUI Accelerator
+  8800 Vision 866
+  8801 Vision 964
+  8810 Trio32
+  8811 Trio64/64V+
+  8812 Trio64UV+ / Aurora64V+
+  8813 Trio64? v3
+  8814 Trio64UV+
+  883D ViRGE/VX
+  8880 868 v0
+  8881 868 v1
+  8882 868 v2
+  8883 868 v3
+  88B0 928 v0
+  88B1 928 v1
+  88B2 928 v2
+  88B3 928 v3
+  88C0 864-1
+  88C1 864-2
+  88C2 864-3
+  88C3 864-4
+  88D0 964-1
+  88D1 964-2
+  88D2 964-3
+  88D3 964-4
+  88F0 968
+  88F1 968-2
+  88F2 968-3
+  88F3 968-3
+  8900 Trio64 V2/DX GUI Accelerator
+  8901 775 (Trio64V2)
+  8902 PLATO/PX
+  8A01 ViRGE/DX or ViRGE/GX
+  CA00 SonicVibes PCI Audio Accelerator
+Vendor 5455 Technische Universit„t Berlin
+  4458 S5933 PCI-MyBus Bridge
+Vendor 5700 Netpower
+Vendor 6374 c't Magazin fr Comp.
+  6773 GPPCI  PCI interface
+Vendor 8008 Quancom Electronic
+  0010 PCI-WDOG1 Watchdog
+  0011 PWDOG2 Watchdog2/PCI
+Vendor 8086 Intel Corporation
+  0122 82437FX System Controller
+  0482 82375 EISA
+  0483 82424 Cache Ctrlr (Saturn)
+  0484 82378/82379 SIO	 ISA Bridge
+  0486 82425EX/82430 (Aries)
+  04A3 82434LX/NX  (Mercury/Neptune)
+  0960 i960 RP Microprocessor/Bridge
+  1221 82092AA PCMCIA Bridge
+  1222 82092AA IDE Controller
+  1223 Intel SAA7116
+  1226 82596
+  1227 82865 EtherExpress Pro100
+  1228 EtherExpress Pro/100 Smart
+  1229 82557 Fast Ethernet
+  122D 82437 Host Bridge (Triton)
+  122E 82371 ISA Bridge (Triton)
+  1230 82438/82371FB IDE (Triton)
+  1234 82371MX
+  1235 82437MX System Controller
+  1237 82441FX PCI/Mem Controller (Mars)
+  1239 82371FB IDE Interface (Triton)
+  123C 82380AB Mobile PCI-to-ISA Bridge
+  124B 82380FB Mobile PCI-to-PCI Bridge (MPCI2)
+  1250 82439HX System Controller
+  1960 80960RP i960RP Microprocessor
+  7000 82371SB ISA Bridge
+  7010 82371SB IDE Controller
+  7020 82371SB USB Host
+  7030 82437VX ISA Bridge
+  7100 82439TX System Controller
+  7110 82371AB PIIX4 ISA Bridge
+  7111 82371AB PIIX4 Ultra DMA IDE Controller
+  7112 82371AB PIIX4 USB Controller
+  7113 82371AB PIIX4 Power Management Controller
+  7180 82443LX	440LX Host-PCI Bridge
+  7181 82443LX	440LX AGP device
+  84C4 82450KX/GX PCI Bridge (Orion)
+  84C5 82450KX/GX Memory Ctrlr (Orion)
+Vendor 8800 Trigem Computer
+  2008 video assistant
+Vendor 8888 Silicon Magic
+Vendor 8E0E Computone Corporation
+Vendor 9004 Adaptec
+  1078 AIC-7810C RAID Coprocessor
+  3B78 AHA-4844W/4844UW Quad Fast-Wide/Ultra SCSI-II
+  5075 AIC-755x SCSI Controller
+  5078 x940 Fast-Wide SCSI-II Ctrlr
+  5175 AIC-755x SCSI Controller
+  5275 AIC-755x SCSI Controller
+  5278 AIC-7850 Fast SCSI Controller
+  5375 AIC-755x SCSI Controller
+  5378 AIC-7850 Fast SCSI Controller
+  5475 AIC-755x SCSI Controller
+  5478 AIC-7850 Fast SCSI Controller
+  5575 AVA-2930 SCSI Controller
+  5578 AHA-2830P SCSI Controller
+  5675 AIC-755x SCSI Controller
+  5678 AIC-7850 Fast SCSI Controller
+  5775 AIC-755x SCSI Controller
+  5778 AIC-7850 Fast SCSI Controller
+  6078 AIC-7860 SCSI Controller
+  6178 AHA-2940AU SCSI Controller
+  6278 AIC-7860 SCSI Controller
+  6378 AIC-7860 SCSI Controller
+  6478 AIC-786x SCSI Controller
+  6578 AIC-786x SCSI Controller
+  6678 AIC-786x SCSI Controller
+  6778 AIC-786x SCSI Controller
+  7078 AHA-294x/AIC-7870P Fast-Wide SCSI-II
+  7178 AHA-2940 Fast-Wide SCSI-II
+  7278 x940 two-channel Fast-Wide SCSI
+  7378 AHA-3985 4-channel RAID SCSI
+  7478 AHA-2944 SCSI
+  7578 AHA-3944/3944W Multich. Fast/Fast-Wide Diff. SCSI
+  7678 AHA-4944W/4944UW Quad Fast-Wide/Ultra Diff. SCSI
+  7778 AIC-787x SCSI Controller
+  7810 AIC-7810 memory control IC
+  7850 AIC-7850 SCSI IC
+  7855 AHA-2930 SCSI
+  7860 AIC-7860 SCSI Controller
+  7870 AIC-7870 SCSI IC
+  7871 AHA-2940
+  7872 AHA-3940
+  7873 AHA-3980
+  7874 AHA-2944 Differential SCSI
+  7880 AIC-7880 Fast-20 SCSI
+  7890 AIC-7890
+  7891 AIC-789x
+  7892 AIC-789x
+  7893 AIC-789x
+  7894 AIC-789x
+  7895 AHA-2940U/2940UW AHA-39xx
+  7896 AIC-789x
+  7897 AIC-789x
+  8078 Adaptec 7880
+  8178 Adaptec 2940UW Rev B.
+  8278 AHA-3940U/UW
+  8378 Adaptec 7883
+  8478 Adaptec 7884
+  8578 AHA-3944U/3944UWD
+  8678 AHA-4944UW
+  8778 AIC-788x Ultra-Wide SCSI
+  EC78 AHA-4944W/4944UW Quad Diff. SCSI
+Vendor 907F Atronics
+  2015 Atronics 2015PL EIDE Controller
+Vendor C0FE Motion Engineering, Inc.
+Vendor D4D4 DY4 Systems Inc.
+  0601 ?
+Vendor E159 Tiger Jet Network Inc.
+Vendor EDD8 Ark Logic Inc
+  A091 Stingray
+  A099 Stingray 2000PV
+  A0A1 ark2000mt 64-bit GUI Accel w/DCI
+Vendor FFFF --end of list--
+
